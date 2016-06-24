@@ -36,8 +36,8 @@ using namespace boost;
 // Global state
 //
 
-static const int64_t nTargetTimespan =  0.10 * 24 * 60 * 60; // 2.4 hours
-static const int64_t nTargetSpacing = 60; // 60 seconds
+static const int64_t nTargetTimespan =  600; // 10 minutes
+static const int64_t nTargetSpacing = 10; // 10 seconds seconds
 static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
 static const int64_t nTargetTimespanRe = 1*60; // 60 Seconds
 static const int64_t nTargetSpacingRe = 1*60; // 60 seconds
@@ -1384,11 +1384,11 @@ int64_t GetBlockValue(int nHeight, int64_t nFees)
 
 	if(nHeight < nDiffChangeTarget) {
 		//this is pre-patch, reward is 8000.
-		nSubsidy = 8000 * COIN;
+		nSubsidy = 100000 * COIN;
 
 		if(nHeight < 1440)  //1440
 		{
-			nSubsidy = 72000 * COIN;
+			nSubsidy = 720000 * COIN;
 		}
 		else if(nHeight < 5760)  //5760
 		{
